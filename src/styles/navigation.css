@@ -1,0 +1,40 @@
+:root {
+  --navbar-bg-color: #bb00ff;
+  --link-font-color: #00ffd9; 
+  --linkFocused-font-color: #0095ff; 
+}
+
+.navbar {
+  width: 100%;
+    margin: 0 auto;
+  display:flex;
+  gap: 10px;
+   background-color: var(--navbar-bg-color);
+     align-items: center;
+}
+
+.navbar img {
+    width: 60px;
+    height: auto;
+}
+
+.navbar a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--link-font-color);
+}
+
+.navbar a:hover,
+.navbar a:focus{
+  color: var(--linkFocused-font-color);
+  text-decoration: underline;
+}
+
+.navbar a:focus{
+
+}
