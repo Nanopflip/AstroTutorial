@@ -1,0 +1,32 @@
+:root {
+    --primary-background-color: #e8e8e8;
+    --primary-border-color: #a0a0a0fc;
+    --primary-table-color: #757eff;
+
+    --dark-background-color: #0e0e0e;
+
+    
+}
+
+.card {
+    border-radius: 15px;
+    background-color: var(--primary-background-color);
+    width: fit-content;
+    padding: 5px;
+    text-align: center;
+    margin: 10px;
+}
+
+.dark .card {
+     background-color: var(--dark-background-color);
+}
+
+.card thead {
+  background-color: var(--primary-table-color);
+}
+
+.card .flexBox {
+    display: flex;
+    justify-content: center;
+
+}

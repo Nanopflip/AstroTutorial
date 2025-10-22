@@ -1,6 +1,14 @@
 :root {
-  --primary-bg-color:#3c3c3c;
-  --primary-font-color: white;
+  --primary-bg-color:#ffffff;
+  --primary-font-color: #000000;
+  --primary-highlight-color: #00ffd9;
+
+  /*Markdown   */
+  --md-codeblock-color:#0091ff;
+  --md-h1-color: #757eff;
+  
+  --dark-bg-color: #282828;
+  --dark-font-color: #ffffff;
 }
 
 
@@ -10,9 +18,24 @@ html {
   color: var(--primary-font-color);
 }
 
+html.dark {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-font-color);
+}
+
+html.dark {
+  color: #fff;
+}
+
 body {
   width: 100%;
   margin: 0 auto;
+}
+
+.dark body {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-font-color);
+
 }
 
 * {
@@ -23,6 +46,47 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
+
+.webTitle {
+  justify-self: center;
+  border-bottom: 3px solid var(--primary-highlight-color);
+  width: max-content;
+}
+
+.md {
+  justify-items: center;
+}
+
+.md p {
+  text-align: center;
+  width: 70%;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 10px;
+}
+
+.dark .md p {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.md pre {
+  padding: 2px;
+  border: 2px solid var(--md-codeblock-color);
+}
+
+.md h2 {
+  color: var(--md-h1-color);
+  border-bottom: #bc93ff solid 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.md h3 {
+  color:#66bdff;
+}
+
+
 
 /* nav styles */
 .menu {

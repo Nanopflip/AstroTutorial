@@ -1,0 +1,9 @@
+---
+const { elements } = Astro.props;
+---
+
+<div class="flexBox">
+    <ul>
+        {elements.map((item) => <li>{item}</li>)}
+    </ul>
+</div>

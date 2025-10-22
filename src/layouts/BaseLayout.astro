@@ -1,7 +1,9 @@
 ---
+import type { astroCalledServerError } from 'astro:actions';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
-const pageTitle = "Home Page";
+
+const {pageTitle} = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -13,10 +15,7 @@ const pageTitle = "Home Page";
   </head>
   <body>
     <Navigation/>
-    <h1>{pageTitle}</h1>
+    <h1 class="webTitle">{pageTitle}</h1>
 
-    <script>
-      import "../script/menu.js";
-    </script>
   </body>
 </html>

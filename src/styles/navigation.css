@@ -1,8 +1,14 @@
 :root {
-  --navbar-bg-color: #bb00ff;
+  --navbar-bg-color: #ccff00; /*alternative: #ccff00 */
+  --navbarTwo-bg-color: #fbff21;
   --link-font-color: #00ffd9; 
-  --linkFocused-font-color: #0095ff; 
+  --linkFocused-font-color: #b8e1ff; /*alternative #0095ff */
+  --text-font-color: white;
+
+  --navbarDark-bg-color: #279100;
+
 }
+
 
 .navbar {
   width: 100%;
@@ -10,7 +16,18 @@
   display:flex;
   gap: 10px;
    background-color: var(--navbar-bg-color);
+   background: linear-gradient(to right,
+      var(--navbar-bg-color) 0%,
+      var(--navbar-bg-color) 45%,
+      var(--navbarTwo-bg-color) 100%
+    );;
      align-items: center;
+     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark .navbar {
+  background: none;
+    background-color: var(--navbarDark-bg-color);
 }
 
 .navbar img {
@@ -26,8 +43,10 @@
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--link-font-color);
+  color: var(--text-font-color);
 }
+
+
 
 .navbar a:hover,
 .navbar a:focus{
@@ -37,4 +56,18 @@
 
 .navbar a:focus{
 
+}
+
+.navbar p {
+ margin-left: auto;
+ padding-right: 5px;
+ font-size: clamp(10px, 2vw, 20px);
+ color: var(--text-font-color);
+}
+
+.break {
+ width: 2px;
+  height: 30px; /* fills the height of the navbar */
+  align-items: center; /* optional: center content vertically */
+    background-color: white;
 }

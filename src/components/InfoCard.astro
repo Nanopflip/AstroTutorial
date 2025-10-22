@@ -1,0 +1,12 @@
+---
+import '../styles/card.css'
+
+const {cardTitle} = Astro.props;
+const {cardText} = Astro.props;
+---
+<div class="card">
+	<h2>{cardTitle}</h2>
+    <p>{cardText}</p>
+    <slot />
+</div>
+

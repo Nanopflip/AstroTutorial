@@ -1,18 +1,82 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
+import InfoCard from "../components/InfoCard.astro";
+import Build from "../../public/azubi_project_translated.md";
+
+import Table from "../components/Table.astro";
+import List from "../components/List.astro";
+
+import '../styles/global.css'
+
+const headers = ["Netzgerät", "IP"];
+
+const rows = [
+	["Netzwerkadresse", "10.10.200.0/24"],
+	["Broadcast", "10.10.200.255"],
+	["Firewall", "10.10.200.255"],
+	["Switch", "10.10.200.2"],
+	["Access Point", "10.10.200.3"],
+	["Server", "10.10.200.4"],
+	["Laptop", "10.10.200.20"],
+	["VLan1", "10.10.20.0/24"],
+	["VLan2", "10.10.30.0/24"],
+	["DHCP", "10.10.200.50 - 10.10.200.250"],
+];
+
+const listElements = ["Firewall", "Accesspoint", "Switch", "Server", "Laptop"];
+
+const pageTitle = "Willkommen im Intranet";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/public/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 
 	<body>
-	<BaseLayout/>
+		<BaseLayout pageTitle={pageTitle} page />
+		<div style="display: flex">
+			<InfoCard cardTitle="Ziel" cardText="">
+				<p>
+					Unser Ziel bestand darin ein funktionierendes Netzwerk <br
+					/> aus folgenden Komponenten aufzusetzen:
+				</p>
+				<List elements={listElements} />
+				<p>
+					Kernpunkt war dabei aufs Internet zugreifen zu können<br
+					/>und nur <a href="www.tagesschau.de">www.tagesschau.de</a> zu
+					verfügbar machen.
+					<br /><br />Als erweiterte Aufgabe, vom Onepager, <br
+					/>haben wir nun das Netzwerk in jeweils zwei VLANs augteilt
+					und dessen Zugänge eingeschränkt.
+				</p>
+			</InfoCard>
+			<InfoCard cardTitle="Netzwerkplan" cardText="">
+				<img
+					id="themeImage"
+					style="width:80%;"
+					src="/netzplanDark.png"
+				/>
+			</InfoCard>
+		</div>
+		<h1 class="webTitle">Vorgehen</h1>
+		<div class="md"> <Build></Build></div>
 	</body>
+	<script is:inline>
+		const image = document.getElementById("themeImage");
+		function setThemeImage() {
+			const isDarkMode =
+				document.documentElement.classList.contains("dark");
+			image.src = isDarkMode ? "/netzplanDark.png" : "/netzplanLight.png";
+		}
+
+		setThemeImage();
+		document
+			.getElementById("themeToggle")
+			?.addEventListener("click", setThemeImage);
+	</script>
 </html>

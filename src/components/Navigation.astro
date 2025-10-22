@@ -1,9 +1,16 @@
 ---
 import '../styles/navigation.css'
+
+import ModeChanger from './ModeChanger.astro'
 ---
 <div class="navbar">
-    <img src="../../public/favicon.svg">
+    <img src="/arburgLogo.svg" style="width:10%; margin-left: 20px;">
+    <!-- 
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
+    -->
+    <p>Azubi Intranet</p>
+    <div class="break"></div>
+    <ModeChanger/>
 </div>
